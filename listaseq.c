@@ -28,11 +28,12 @@ bool InserisciAdIndice(ListaSequenziale* Lista, int NuovoElemento, int IndiceNuo
 }
 
 bool ShiftSequenza(ListaSequenziale* Lista, int Indice, int NumeroPosizioni) {
+    int i;
+
     if (Lista->Lunghezza + NumeroPosizioni >= MAX_LUNGHEZZA || Indice < 0 || Indice >= Lista->Lunghezza) {
         return false;
     }
 
-    int i;
     for (i = Lista->Lunghezza - 1; i >= Indice; i--) {
         Lista->Sequenza[i + NumeroPosizioni] = Lista->Sequenza[i];
     }
