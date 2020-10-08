@@ -2,7 +2,7 @@
 #define LIBCAGLIOTI_H
 
 // One include to rule the all!!
-#include "utils.h"
-#include "listaseq.h"
+#include "libcaglioti/utils.h"
+#include "libcaglioti/listaseq.h"
 
 #endif
