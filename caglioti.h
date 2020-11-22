@@ -1,7 +1,7 @@
-#ifndef LIBCAGLIOTI_H
-#define LIBCAGLIOTI_H
+#ifndef HEADER_CAGLIOTI
+#define HEADER_CAGLIOTI
 
-/* One include to rule the all!! */
+/* One include to rule them all! */
 #include "lib/utils.h"
 #include "lib/listaseq.h"
 
