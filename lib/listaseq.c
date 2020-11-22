@@ -48,7 +48,7 @@ bool EliminaAdIndice(ListaSequenziale* Lista, int IndiceElemento) {
         Lista->Lunghezza--;
     }
 
-    return false;
+    return true;
 }
 
 static bool ShiftSequenza(ListaSequenziale* Lista, int Indice, int NumeroPosizioni) {
