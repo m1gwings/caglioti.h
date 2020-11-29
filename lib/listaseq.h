@@ -1,6 +1,8 @@
 #ifndef HEADER_LISTASEQ
 #define HEADER_LISTASEQ
 
+#define listaseq listaseq
+
 #include "utils.h"
 
 #define MAX_LUNGHEZZA 100
@@ -14,7 +16,7 @@ typedef struct {
  * Funzione per l'inizializzazione della lista con lunghezza zero
  * @param Lista la lista sequenziale da inizializzare
 */
-void Inizializza(ListaSequenziale*);
+void listaseq_Inizializza(ListaSequenziale*);
 
 /**
  * Funzione per l'inserimento di un nuovo elemento in coda
@@ -23,7 +25,7 @@ void Inizializza(ListaSequenziale*);
  *
  * @return true se l'inseriemnto è andato a buon fine, false altrimenti
 */
-bool InserisciInCoda(ListaSequenziale*, int);
+bool listaseq_InserisciInCoda(ListaSequenziale*, int);
 
 /**
  * Funzione per eliminare l'ultimo elemento dalla coda
@@ -31,7 +33,7 @@ bool InserisciInCoda(ListaSequenziale*, int);
  *
  * @return true se l'eliminazione è andata a buon fine, false altrimenti
 */
-bool EliminaDallaCoda(ListaSequenziale*);
+bool listaseq_EliminaDallaCoda(ListaSequenziale*);
 
 /**
  * Funzione per l'inserimento di un elemento ad un certo indice
@@ -41,7 +43,7 @@ bool EliminaDallaCoda(ListaSequenziale*);
  *
  * @return true se l'inserimento è andato a buon fine, false altrimenti
 */
-bool InserisciAdIndice(ListaSequenziale*, int, int);
+bool listaseq_InserisciAdIndice(ListaSequenziale*, int, int);
 
 /**
  * Funzione per eliminare l'elemento ad un certo indice
@@ -49,18 +51,7 @@ bool InserisciAdIndice(ListaSequenziale*, int, int);
  *
  * @return true se l'eliminazione è andata a buon fine, false altrimenti
 */
-bool EliminaAdIndice(ListaSequenziale*, int);
-
-/**
- * Funzione per lo spostamento degli elementi in una sequenza
- * Attenzione! La funzione non modifica ListaSequenziale.Lunghezza
- * @param Lista la lista sequenziale dove effettuare lo spostamento
- * @param Indice l'indice da cui far partire lo spostamento
- * @param NumeroPosizioni il numero di celle di cui "shiftare"
- *
- * @return true se lo spostamento è andato a buon fine, false altrimenti
-*/
-static bool ShiftSequenza(ListaSequenziale*, int, int);
+bool listaseq_EliminaAdIndice(ListaSequenziale*, int);
 
 /**
  * Funzione per l'accesso all'i-esimo elemento
@@ -69,15 +60,6 @@ static bool ShiftSequenza(ListaSequenziale*, int, int);
  *
  * @return valore dell'i-esimo elemento se esiste, 0 altrimenti
 */
-int Elemento(ListaSequenziale*, int);
-
-/**
- * Funzione per verificare se esiste l'i-esimo elemento all'interno di una lista sequenziale
- * @param Lista rispetto alla quale si verifica l'esistenza dell'i-esimo elemento
- * @param IndiceNuovoElemento l'indice da verificare
- *
- * @return true se esiste l'i-esimo elemento, false altrimenti
-*/
-static bool IndiceValido(ListaSequenziale*, int);
+int listaseq_Elemento(ListaSequenziale*, int);
 
 #endif

@@ -1,10 +1,30 @@
 #include "listaseq.h"
 
-void Inizializza(ListaSequenziale* Lista) {
+/**
+ * Funzione per verificare se esiste l'i-esimo elemento all'interno di una lista sequenziale
+ * @param Lista rispetto alla quale si verifica l'esistenza dell'i-esimo elemento
+ * @param IndiceNuovoElemento l'indice da verificare
+ *
+ * @return true se esiste l'i-esimo elemento, false altrimenti
+*/
+static bool IndiceValido(ListaSequenziale* Lista, int IndiceNuovoElemento);
+
+/**
+ * Funzione per lo spostamento degli elementi in una sequenza
+ * Attenzione! La funzione non modifica ListaSequenziale.Lunghezza
+ * @param Lista la lista sequenziale dove effettuare lo spostamento
+ * @param Indice l'indice da cui far partire lo spostamento
+ * @param NumeroPosizioni il numero di celle di cui "shiftare"
+ *
+ * @return true se lo spostamento è andato a buon fine, false altrimenti
+*/
+static bool ShiftSequenza(ListaSequenziale* Lista, int Indice, int NumeroPosizioni);
+
+void listaseq_Inizializza(ListaSequenziale* Lista) {
     Lista->Lunghezza = 0;
 }
 
-bool InserisciInCoda(ListaSequenziale* Lista, int NuovoElemento) {
+bool listaseq_InserisciInCoda(ListaSequenziale* Lista, int NuovoElemento) {
     if (Lista->Lunghezza == MAX_LUNGHEZZA) {
         return false;
     }
@@ -13,7 +33,7 @@ bool InserisciInCoda(ListaSequenziale* Lista, int NuovoElemento) {
     return true;
 }
 
-bool EliminaDallaCoda(ListaSequenziale* Lista) {
+bool listaseq_EliminaDallaCoda(ListaSequenziale* Lista) {
     if (Lista->Lunghezza == 0) {
         return false;
     }
@@ -22,7 +42,7 @@ bool EliminaDallaCoda(ListaSequenziale* Lista) {
     return true;
 }
 
-bool InserisciAdIndice(ListaSequenziale* Lista, int NuovoElemento, int IndiceNuovoElemento) {
+bool listaseq_InserisciAdIndice(ListaSequenziale* Lista, int NuovoElemento, int IndiceNuovoElemento) {
     if (Lista->Lunghezza == MAX_LUNGHEZZA || !IndiceValido(Lista, IndiceNuovoElemento)) {
         return false;
     }
@@ -39,7 +59,7 @@ bool InserisciAdIndice(ListaSequenziale* Lista, int NuovoElemento, int IndiceNuo
     return false;
 }
 
-bool EliminaAdIndice(ListaSequenziale* Lista, int IndiceElemento) {
+bool listaseq_EliminaAdIndice(ListaSequenziale* Lista, int IndiceElemento) {
     if (!IndiceValido(Lista, IndiceElemento)) {
         return false;
     }
@@ -73,7 +93,7 @@ static bool ShiftSequenza(ListaSequenziale* Lista, int Indice, int NumeroPosizio
     return true;
 }
 
-int Elemento(ListaSequenziale* Lista, int i) {
+int listaseq_Elemento(ListaSequenziale* Lista, int i) {
     if (!IndiceValido(Lista, i)) {
         return 0;
     }
